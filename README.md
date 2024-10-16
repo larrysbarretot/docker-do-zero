@@ -60,3 +60,31 @@ docker run -v $(pwd):/app -p 8000:8000 my-app-python
 ```bash
 python manage.py runserver 0.0.0.0:8000
 ```
+
+```bash
+docker run -e POSTGRES_PASSWORD=root -e POSTGRES_DB=django postgres:15.8-alpine3.20
+```
+
+```bash
+docker compose up
+```
+
+```bash
+pipenv install psycopg2-binary
+```
+
+```bash
+python manage.py migrate
+```
+
+_admin@user.com_
+```bash
+python manage.py createsuperuser
+```
+
+**Administration**
+_/admin_
+
+```bash
+docker compose down
+```

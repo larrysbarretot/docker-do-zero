@@ -25,8 +25,10 @@ SECRET_KEY = 'django-insecure-_&kp78s*geq)4%i&9l6=!v6p^*!9%bf9z50^rltjphjet&sl0o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#ALLOWED_HOSTS = ['turbo-memory-jr5gpv699hxv6-8000.app.github.dev', 'localhost', '127.0.0.1']
+#CSRF_TRUSTED_ORIGINS = ['https://turbo-memory-jr5gpv699hxv6-8000.app.github.dev', 'http://localhost:8000', 'http://127.0.0.1:8000', 'https://localhost:8000']
 ALLOWED_HOSTS = []
-
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
 
 # Application definition
 
@@ -74,9 +76,17 @@ WSGI_APPLICATION = 'videos.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'postgres',
+        'PORT': '5432',
     }
 }
 
