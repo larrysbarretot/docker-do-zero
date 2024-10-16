@@ -88,3 +88,15 @@ _/admin_
 ```bash
 docker compose down
 ```
+
+```bash
+docker build -t my-app-python-prod -f Dockerfile.prod .
+```
+
+```bash
+docker run -p 8000:8000 my-app-python-prod
+```
+
+```bash
+docker compose up --build
+```
