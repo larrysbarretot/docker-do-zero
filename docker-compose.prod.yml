@@ -1,21 +1,12 @@
-# docker compose + swarm
-# servicos gerenciados de containers
-# cloud run
-# aws ecs
-# azure container service
-# digital ocean
-# heroku
-
 services:
   django:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.prod
+    command: tail -f /dev/null
     ports:
       - 8000:8000
-    volumes:
-      - .:/app
-    
+
   postgres:
     image: postgres:15.8-alpine3.20
     volumes:

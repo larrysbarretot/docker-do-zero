@@ -13,7 +13,7 @@ USER my-user
 
 WORKDIR /app
 
-RUN chown -R my-user /app
+#RUN chown -R my-user /app
 
 COPY --chown=my-user:my-user . /app
 
